@@ -21,7 +21,22 @@ with open("Sort Me.txt","r") as f:
 #Built in python to sort the names alphabetically, I dont want to reinvent the wheel
 names.sort()
 sortLength(names)
-print(names)
+notValid = True
+while notValid:
+    val = input("Would you like your Sort to be Reversed? Y/N \n")
+    if val.lower() == 'y' or val.lower() == 'n':
+        notValid = False
+    else:
+        print("You entered a invalid Response, Please Type either a 'Y' or a 'N'\n")
+print(val)
+if val.lower() == 'y':
+    names.reverse()
+    print(names) #Names should be sorted Reverse
+else:
+    print(names) #names should be sorted Normally
+
+#I could get rid of the Else statment and move the print in line 34 out, but for the purposes of this
+#   It looks better and reads better to have them both in the if else statements.
 exportArrayToFile(names)
 
 
